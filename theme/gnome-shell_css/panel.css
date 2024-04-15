@@ -92,11 +92,11 @@
 }
 
 /*For dash to panel*/
-StWidget {
+#dashtopanelTaskbar StWidget {
   background-color: none;
   height: auto !important;
   border-radius: 14px;
-  min-height: 0px !important;
+  min-height: 0px;
 }
 .dashtopanelMainPanel {
 	border-radius: 0px !important;
@@ -104,8 +104,8 @@ StWidget {
 .dtp-container {
 	color: TEXT-PRIMARY-COLOR;
 	border-radius: 14px;
-	margin-top: 3px;
-	margin-bottom: 2px;
+	margin-top: 4px;
+	margin-bottom: 4px;
 	background-color: ACCENT-DISABLED-COLOR;
 	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
 }
