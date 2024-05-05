@@ -12,7 +12,6 @@
             "_comment" : "Color of disabled buttons",
             "default" : "ACCENT_INSENSITIVE"
         },
-
         "BUTTON-TEXT-COLOR" : {
             "_comment" : "Text color for buttons",
             "default" : "TEXT-PRIMARY-COLOR"
@@ -21,607 +20,290 @@
             "_comment" : "Text color for buttons",
             "default" : "TEXT-SECONDARY-COLOR"
         },
-
         "ACCENT-COLOR" : {
             "_comment" : "Active buttons/toggles",
             "replace" : "ACCENT-COLOR",
-
-            "light" : {
-                "s" : 52,
-                "l" : 67,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 42,
-                "l" : 26,
-                "a" : 1
-            }
+            "s" : 42,
+            "l" : 26,
+            "a" : 1
+            
         },
         "ACCENT_HOVER" : {
             "_comment" : "Hover color in active buttons/toggles",
-
-            "light" : {
-                "s" : 50,
-                "l" : 60,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 66,
-                "l" : 22,
-                "a" : 1
-            }
+            "s" : 66,
+            "l" : 22,
+            "a" : 1
+            
         },
         "ACCENT_INSENSITIVE" : {
             "_comment" : "Accent color for insensitive elements",
+            "s" : 42,
+            "l" : 26,
+            "a" : 0.6
             
-            "light" : {
-                "s" : 52,
-                "l" : 50,
-                "a" : 0.5
-            },
-
-            "dark" : {
-                "s" : 42,
-                "l" : 26,
-                "a" : 0.6
-            }
         },
-
         "ACCENT-DISABLED-COLOR" : {
             "_comment" : "Buttons / disabled toggles",
+            "s" : 95,
+            "l" : 85,
+            "a" : 0.08
             
-            "light" : {
-                "s" : 40,
-                "l" : 90,
-                "a" : 0.9
-            },
-            
-            "dark" : {
-                "s" : 95,
-                "l" : 85,
-                "a" : 0.08
-            }
         },
         "ACCENT-DISABLED_HOVER" : {
             "_comment" : "Hover color in buttons / disabled toggles",
-
-            "light" : {
-                "s" : 35,
-                "l" : 85,
-                "a" : 0.95
-            },
-
-            "dark" : {
-                "s" : 40,
-                "l" : 85,
-                "a" : 0.13
-            }
+            "s" : 40,
+            "l" : 85,
+            "a" : 0.13
+            
         },
-
         "ACCENT-SECONDARY-COLOR" : {
             "_comment" : "Capture button in Screenshot UI, checkboxes; borders when focusing on element",
+            "s" : 20,
+            "l" : 75,
+            "a" : 1
             
-            "light" : {
-                "s" : 20,
-                "l" : 50,
-                "a" : 1   
-            },
-
-            "dark" : {
-                "s" : 20,
-                "l" : 75,
-                "a" : 1
-            }
         },
         "ACCENT-SECONDARY_HOVER" : {
             "_comment" : "Secondary accent color on hover",
-
-            "light" : {
-                "s" : 20,
-                "l" : 45,
-                "a" : 1 
-            },
-
-            "dark" : {
-                "s" : 20,
-                "l" : 70,
-                "a" : 1
-            }
+            "s" : 20,
+            "l" : 70,
+            "a" : 1
+            
         },
-        
         "ACCENT-OPACITY-COLOR" : {
             "_comment" : "Accent color, but with transparency. Used in selected workspace indicator / tiled windows / window selection (Screenshot UI)",
+            "s" : 42,
+            "l" : 26,
+            "a" : 0.2
             
-            "light" : {
-                "s" : 78,
-                "l" : 84,
-                "a" : 0.5
-            },
-
-            "dark" : {
-                "s" : 42,
-                "l" : 26,
-                "a" : 0.2
-            }
         },
-
         "ACCENT-LOGIN-COLOR" : {
             "_comment" : "Accent color for login screen user list",
+            "s" : 65,
+            "l" : 55,
+            "a" : 1
             
-            "light" : {
-                "s" : 65,
-                "l" : 65,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 55,
-                "a" : 1
-            }
         },
         "ACCENT-LOGIN_HOVER" : {
             "_comment" : "Hover color for login screen user list",
-
-            "light" : {
-                "s" : 65,
-                "l" : 55,
-                "a" : 0.8
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 55,
-                "a" : 0.8
-            }
+            "s" : 65,
+            "l" : 55,
+            "a" : 0.8
+            
         },
-
         "ACCENT-FILLED-COLOR" : {
             "_comment" : "Accent color but more vibrant",
-
-            "light" : {
-                "s" : 76,
-                "l" : 68,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 76,
-                "l" : 68,
-                "a" : 1
-            }
+            "s" : 76,
+            "l" : 68,
+            "a" : 1
+            
         },
         "ACCENT-FILLED_HOVER" : {
             "_comment" : "Hover effect for accent filled color",
-
-            "light" : {
-                "s" : 70,
-                "l" : 60,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 80,
-                "l" : 75,
-                "a" : 1
-            }
+            "s" : 80,
+            "l" : 75,
+            "a" : 1
+            
         },
         "ACCENT-FILLED_INSENSITIVE" : {
             "_comment" : "Vibrant color for insensitive elements",
-
-            "light" : {
-                "s" : 76,
-                "l" : 40,
-                "a" : 0.4
-            },
-
-            "dark" : {
-                "s" : 76,
-                "l" : 68,
-                "a" : 0.5
-            }
+            "s" : 76,
+            "l" : 68,
+            "a" : 0.5
+            
         },
-
         "BACKGROUND-COLOR" : {
             "_comment" : "Background color. Used in overview, panel, different menus...",
-
-            "light" : {
-                "s" : 50,
-                "l" : 97,
-                "a" : 0.92
-            },
-
-            "dark" : {
-                "s" : 7,
-                "l" : 8,
-                "a" : 0.95
-            }
+            "s" : 7,
+            "l" : 8,
+            "a" : 0.95
+            
         },
         "BACKGROUND-OPAQUE-COLOR" : {
             "_comment" : "Background color panel and overview (fix flickering)",
-
-            "light" : {
-                "s" : 50,
-                "l" : 97,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 7,
-                "l" : 8,
-                "a" : 1
-            }
+            "s" : 7,
+            "l" : 8,
+            "a" : 1
+            
         },
-        
         "DASH-COLOR" : {
             "_comment" : "Special background color for dash",
-
-            "light" : {
-                "s" : 40,
-                "l" : 98,
-                "a" : 0.8
-            },
-
-            "dark" : {
-                "s" : 5,
-                "l" : 20,
-                "a" : 0.7
-            }
+            "s" : 5,
+            "l" : 20,
+            "a" : 0.7
+            
         },
         "DASH_OVERVIEW" : {
             "_comment" : "Dash background when in overview",
-
-            "light" : {
-                "s" : 60,
-                "l" : 90,
-                "a" : 0.8
-            },
-
-            "dark" : {
-                "s" : 0,
-                "l" : 100,
-                "a" : 0.12
-            }
+            "s" : 0,
+            "l" : 100,
+            "a" : 0.12
+            
         },
-
         "WELL-APP-SELECTED" : {
             "_comment" : "Running app dot",
-
-            "light" : {
-                "s" : 20,
-                "l" : 50,
-                "a" : 0.4
-            },
+            "s" : 20,
+            "l" : 75,
+            "a" : 0.4
             
-            "dark" : {
-                "s" : 20,
-                "l" : 75,
-                "a" : 0.4
-            }
         },
-
         "TEXT-PRIMARY-COLOR" : {
             "_comment" : "Used as primary color in text",
+            "s" : 65,
+            "l" : 95,
+            "a" : 1
             
-            "light" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.87
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 1
-            }
         },
         "TEXT-SECONDARY-COLOR" : {
             "_comment" : "Item description, time stamp",
-
-            "light" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.6
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 0.67
-            }
+            "s" : 65,
+            "l" : 95,
+            "a" : 0.67
+            
         },
         "TEXT-DISABLED-COLOR" : {
             "_comment" : "No notifications, Searching..., etc. labels",
-
-            "light" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.38
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 0.38
-            }
+            "s" : 65,
+            "l" : 95,
+            "a" : 0.38
+            
         },
-
         "TEXT-INVERTED-COLOR": {
             "_comment" : "Screenshot UI shot/cast button",
-
-            "light" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.87
-            }
-        },
-
-        "TEXT-WHITE-COLOR" : {
+            "s" : 71,
+            "l" : 10,
+            "a" : 0.87
             
-            "light" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 1
-            }
+        },
+        "TEXT-WHITE-COLOR" : {
+            "s" : 65,
+            "l" : 95,
+            "a" : 1
+            
         },
         "TEXT-BLACK-COLOR" : {
-
-            "light" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.87
-            },
-
-            "dark" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.87
-            }
+            "s" : 71,
+            "l" : 10,
+            "a" : 0.87
+            
         },
         "TEXT-BLACK_SECONDARY" : {
-
-            "light" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.6
-            },
-
-            "dark" : {
-                "s" : 71,
-                "l" : 10,
-                "a" : 0.67
-            }
+            "s" : 71,
+            "l" : 10,
+            "a" : 0.67
+            
         },
-
         "BORDER-SHADOW" : {
             "_comment" : "Used as border in buttons",
-
-            "light" : {
-                "s" : 0,
-                "l" : 0,
-                "a" : 0.05
-            },
-
-            "dark" : {
-                "s" : 0,
-                "l" : 100,
-                "a" : 0.03
-            }
+            "s" : 0,
+            "l" : 100,
+            "a" : 0.03
+            
         },
         "BORDER-MENU-SHADOW" : {
             "_comment" : "Used as border in menus",
-
-            "light" : {
-                "s" : 0,
-                "l" : 0,
-                "a" : 0.1
-            },
-
-            "dark" : {
-                "s" : 0,
-                "l" : 100,
-                "a" : 0.07
-            }
+            "s" : 0,
+            "l" : 100,
+            "a" : 0.07
+            
         },
-
         "SEPARATOR-COLOR" : {
             "_comment" : "Color for separators",
-
-            "light" : {
-                "s" : 0,
-                "l" : 0,
-                "a" : 0.1
-            },
-
-            "dark" : {
-                "s" : 0,
-                "l" : 100,
-                "a" : 0.1
-            }
+            "s" : 0,
+            "l" : 100,
+            "a" : 0.1
+            
         },
-
         "SHOW-APPS-ICON-COLOR" : {
             "_comment" : "Dash: Show Apps icon",
-
-            "light" : {
-                "s" : 4,
-                "l" : 30,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 65,
-                "l" : 95,
-                "a" : 1
-            }
+            "s" : 65,
+            "l" : 95,
+            "a" : 1
+            
         },
-
         "SCROLLBAR-COLOR" : {
             "_comment" : "Special color for scrollbars",
-
-            "light" : {
-                "s" : 20,
-                "l" : 70,
-                "a" : 0.75
-            },
-
-            "dark" : {
-                "s" : 10,
-                "l" : 25,
-                "a" : 0.75
-            }
+            "s" : 10,
+            "l" : 25,
+            "a" : 0.75
+            
         },
         "SCROLLBAR_HOVER" : {
-
-            "light" : {
-                "s" : 20,
-                "l" : 70,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 12,
-                "l" : 25,
-                "a" : 1
-            }
+            "s" : 12,
+            "l" : 25,
+            "a" : 1
+            
         },
         "SCROLLBAR_ACTIVE" : {
-
-            "light" : {
-                "s" : 20,
-                "l" : 70,
-                "a" : 0.87
-            },
-
-            "dark" : {
-                "s" : 12,
-                "l" : 35,
-                "a" : 0.87
-            }
+            "s" : 12,
+            "l" : 35,
+            "a" : 0.87
+            
         },
-        
         "PAGE-NAV-HINT" : {
             "_comment" : "Left and right hints on edges of the screen when dragging app icon ",
-
-            "light" : {
-                "s" : 95,
-                "l" : 20,
-                "a" : 0.05
-            },
-
-            "dark" : {
-                "s" : 15,
-                "l" : 90,
-                "a" : 0.05
-            }
+            "s" : 15,
+            "l" : 90,
+            "a" : 0.05
+            
         },
-    
         "SECTION-COLOR" : {
             "_comment" : "Same as ACCENT-DISABLED-COLOR, but less contrast and has no transparency",
-
-            "light" : {
-                "s" : 45,
-                "l" : 92,
-                "a" : 0.8
-            },
-
-            "dark" : {
-                "s" : 5,
-                "l" : 25,
-                "a" : 0.2
-            }
+            "s" : 5,
+            "l" : 25,
+            "a" : 0.2
+            
         },
         "SECTION-OPAQUE-COLOR" : {
             "_comment" : "Same as SECTION-COLOR, but has no transparency",
-
-            "light" : {
-                "s" : 45,
-                "l" : 92,
-                "a" : 0.8
-            },
-
-            "dark" : {
-                "s" : 6,
-                "l" : 12,
-                "a" : 0.9
-            }
+            "s" : 6,
+            "l" : 12,
+            "a" : 0.9
+            
         },
-
         "BUTTON-CLOSE-COLOR" : {
             "_comment" : "Same as ACCENT-DISABLED-COLOR, but has no transparency",
-
-            "light" : {
-                "s" : 35,
-                "l" : 90,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 6,
-                "l" : 15,
-                "a" : 1
-            }
+            "s" : 6,
+            "l" : 15,
+            "a" : 1
+            
         },
         "BUTTON-CLOSE_HOVER" : {
             "_comment" : "Same as ACCENT-DISABLED_HOVER, but has no transparency",
-
-            "light" : {
-                "s" : 35,
-                "l" : 85,
-                "a" : 1
-            },
-
-            "dark" : {
-                "s" : 7,
-                "l" : 20,
-                "a" : 1
-            }
+            "s" : 7,
+            "l" : 20,
+            "a" : 1
+            
         }
-        
     },
-    
     "colors" : {
         "red" : {
             "h" : 0,
-            "s" : null
+        "s" : null
         },
         "yellow" : {
             "h" : 40,
-            "s" : null
+        "s" : null
         },
         "green" : {
             "h" : 135,
-            "s" : null
+        "s" : null
         },
         "blue" : {
             "h" : 210,
-            "s" : null
+        "s" : null
         },
         "purple" : {
             "h" : 275,
-            "s" : null
+        "s" : null
         },
         "pink" : {
             "h" : 295,
-            "s" : null
+        "s" : null
         },
         "gray" : {
             "h" : 0,
-            "s" : 0
+        "s" : 0
         }
     }
 }

@@ -42,12 +42,10 @@ def parse_args():
                                      epilog=textwrap.dedent('''
                     Examples:
                       -a                            all accent colors, light & dark mode
-                      --all --mode dark             all accent colors, dark mode
-                      --purple --mode=light         purple accent color, light mode
+                      --all                         all accent colors, dark mode
+                      --purple                      purple accent color, light mode
                       --hue 150 --name coldgreen    custom coldgreen accent color, light & dark mode
-                      --red --green --sat=70        red, green accent colors, 70% of stock saturation
-                      --hue=200 --name=grayblue --sat=50 --mode=dark
-                                    custom grayblue accent color, 50% of stock saturation, dark mode
+                      --red --green                 red, green accent colors
                     '''))
 
     # Default arguments
@@ -72,7 +70,6 @@ def parse_args():
     color_styles.add_argument("--filled", action="store_true", help="make accent color more vibrant")
 
     color_tweaks = parser.add_argument_group('Optional theme tweaks')
-    color_tweaks.add_argument('--mode', choices=['light', 'dark'], help='select a specific theme mode to install')
     color_tweaks.add_argument('--sat', type=int, choices=range(0, 251),
                               help='custom color saturation (<100%% - reduce, >100%% - increase)', metavar='(0 - 250)%')
 
@@ -211,8 +208,7 @@ def local_theme(args, colors):
         remove_files()
 
     gnome_shell_theme = Theme("gnome-shell", colors, f"{config.raw_theme_folder}/{config.gnome_folder}",
-                              config.themes_folder, config.temp_folder,
-                              mode=args.mode, is_filled=args.filled)
+                              config.themes_folder, config.temp_folder, is_filled=args.filled)
 
     apply_tweaks(args, gnome_shell_theme)
     apply_colors(args, gnome_shell_theme, colors)

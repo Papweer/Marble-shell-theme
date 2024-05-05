@@ -30,8 +30,7 @@ class TestInstall(unittest.TestCase):
         # create test theme
         test_theme = Theme("gnome-shell", colors,
                            f"{project_folder}/{config.raw_theme_folder}/{config.gnome_folder}",
-                           themes_folder, temp_folder,
-                           mode='light', is_filled=True)
+                           themes_folder, temp_folder, is_filled=True)
 
         # install test theme
         test_theme.install(120, 'test', 70)

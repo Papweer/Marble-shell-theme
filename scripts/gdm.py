@@ -34,11 +34,9 @@ class GlobalTheme:
 
         os.makedirs(self.temp_folder, exist_ok=True)  # create temp folder
 
-        # create light and dark themes
-        self.light_theme = Theme("gnome-shell-light", self.colors_json, self.theme_folder,
-                                 self.extracted_theme, self.temp_folder, mode='light', is_filled=is_filled)
+        # create theme
         self.dark_theme = Theme("gnome-shell-dark", self.colors_json, self.theme_folder,
-                                self.extracted_theme, self.temp_folder, mode='dark', is_filled=is_filled)
+                                self.extracted_theme, self.temp_folder, is_filled=is_filled)
 
     def __del__(self):
         """
