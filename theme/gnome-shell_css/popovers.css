@@ -2,11 +2,10 @@
 
 .popup-menu-content, /* popover content */
 .candidate-popup-content { /* IBus Candidate Popup (i dunno how to call it) */
-	color: TEXT-PRIMARY-COLOR;
-	background: BACKGROUND-COLOR; 
+	color: @text;
+	background: @base; 
 	padding: 8px;
 	border-radius: 20px;
-	border: 1px solid BORDER-MENU-SHADOW;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);	
 }
 
@@ -25,9 +24,8 @@
 .popup-menu-item:focus,
 .popup-menu-item:hover,
 .popup-menu-item:checked {
-	background-color: ACCENT-DISABLED-COLOR !important;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW !important;
-	color: TEXT-PRIMARY-COLOR;
+	background-color: @surface0 !important;
+	color: @text;
 }
 
 .popup-menu-item:checked {
@@ -35,8 +33,8 @@
 }
 
 .popup-menu-item:active {
-	background-color: ACCENT-DISABLED_HOVER;
-	color: TEXT-PRIMARY-COLOR;
+	background-color: @surface1;
+	color: @text;
 }
 
 /* 44 separator margin fix */
@@ -47,15 +45,14 @@
 /* separator in popup menu */
 .popup-separator-menu-item .popup-separator-menu-item-separator {
 	height: 1px;
-	background-color: SEPARATOR-COLOR;
+	background-color: @accent-color;
 }
 
 
 /* popover submenus */
 .popup-sub-menu {
-	background-color: ACCENT-DISABLED-COLOR;
-	color: TEXT-PRIMARY-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
+	color: @text;
 	border-radius: 0 0 12px 12px;
 	margin: 0 0 2px 0;
 }
@@ -63,7 +60,7 @@
 /* submenu items */
 .popup-sub-menu .popup-menu-item {
 	margin: 0;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: transparent;
 	border-radius: 0;
 }
@@ -75,20 +72,20 @@
 
 .popup-sub-menu .popup-menu-item:hover,
 .popup-sub-menu .popup-menu-item:focus {
-	background-color: ACCENT-DISABLED_HOVER !important;
+	background-color: @surface1 !important;
 }
 
 .popup-menu-item:insensitive {
-	color: TEXT-DISABLED-COLOR;
+	color: @subtext0;
 	margin: 0;
 }
 
 /* all other graphical elements (sliders), OpenWeather Extension */
 .popup-inactive-menu-item {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: transparent;
 }
 
 .popup-inactive-menu-item:insensitive {
-	color: TEXT-SECONDARY-COLOR !important;
+	color: @subtext1 !important;
 }

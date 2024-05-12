@@ -21,21 +21,19 @@
 
 /* today header button */
 .datemenu-today-button {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 	background-color: none;
 	border-radius: 12px;
 }
 
 .datemenu-today-button:hover {
 	transition-duration: 100ms;
-	background-color: SECTION-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW !important;
+	background-color: @mantle;
 }
 
 .datemenu-today-button:focus {
 	transition-duration: 100ms;
-	background-color: ACCENT-OPACITY-COLOR;
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 2px @accent-color !important;
 }
 
 /* weekday label */
@@ -53,14 +51,13 @@
 
 .calendar {
 	border-radius: 14px;
-	background-color: SECTION-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW !important;
+	background-color: @mantle;
 	padding: 5px;
 }
 
 /* month header */
 .calendar-month-header .calendar-month-label {
-	color: TEXT-PRIMARY-COLOR !important;
+	color: @text !important;
 	padding: 0 !important; /* override because of gdm */
 	background-color: transparent; /* 46+ */
 }
@@ -73,7 +70,7 @@
 /* days of week */
 .calendar-day.calendar-day-heading,
 .calendar .calendar-day-heading /* 46+ */ {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 	background-color: transparent;
 	border-radius: 8px;
 }
@@ -81,7 +78,7 @@
 /* day buttons, prev/next month button */
 .calendar-day,
 .calendar-month-header .pager-button {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: transparent; /* 46+ */
 	border-radius: 10px;
 	padding: 0;
@@ -93,37 +90,33 @@
 .calendar .calendar-day-heading:hover, /* 46+ */
 .calendar .calendar-day-heading:selected:hover, /* 46+ */
 .calendar .calendar-month-header .pager-button:hover {
-	background-color: ACCENT-DISABLED_HOVER;
-	color: TEXT-PRIMARY-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface1;
+	color: @text;
 }
 
 .calendar-day:focus,
 .calendar .calendar-day-heading:focus, /* 46+ */
 .calendar .calendar-month-header .pager-button:focus {
-	background-color: ACCENT-OPACITY-COLOR;
-	box-shadow: inset 0 0 0 1.5px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 1.5px @accent-color !important;
 }
 
 .calendar-day:selected,
 .calendar .calendar-day-heading:selected /* 46+ */ {
-	background: ACCENT-DISABLED_HOVER;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background: @surface1;
 }
 
 /* today button */
 .calendar-today,
 .calendar-today:selected {
-	background-color: BUTTON-COLOR;
-	color: BUTTON-TEXT-COLOR !important;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @accent-color;
+	color: @text !important;
 }
 
 .calendar-today:hover,
 .calendar-today:selected:hover,
 .calendar-today:focus,
 .calendar-today:selected:focus {
-	background-color: BUTTON_HOVER;
+	background-color: @accent-color-hover;
 } 
 
 /* if day has event */
@@ -141,13 +134,13 @@
 /* weekend day button */
 .calendar .calendar-nonwork-day, /* up to 44 */
 .calendar-weekend { /* 45+ */
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 /* other month day button */
 .calendar .calendar-other-month-day, /* up to 44 */
 .calendar-other-month { /* 45+ */
-	color: TEXT-DISABLED-COLOR !important;
+	color: @subtext0 !important;
 }
 
 .calendar .calendar-other-month-day.calendar-day-with-events, /* up to 44 */
@@ -157,9 +150,8 @@
 }
 
 .calendar .calendar-week-number {
-	background-color: ACCENT-DISABLED-COLOR;
-	color: TEXT-SECONDARY-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
+	color: @subtext1;
 	border-radius: 7px;
 }
 
@@ -169,62 +161,60 @@
 .events-button,
 .world-clocks-button,
 .weather-button {
-	background-color: SECTION-COLOR;
-	color: TEXT-SECONDARY-COLOR;
+	background-color: @mantle;
+	color: @subtext1;
 	border-radius: 14px;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
 }
 
 .events-button:hover,
 .world-clocks-button:hover,
 .weather-button:hover {
-	background-color: ACCENT-DISABLED-COLOR;
+	background-color: @surface0;
 }
 
 .events-button:focus,
 .world-clocks-button:focus,
 .weather-button:focus {
-	background-color: ACCENT-OPACITY-COLOR;
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 2px @accent-color !important;
 }
 
 .events-button:active,
 .world-clock-button:active,
 .weather-button:active {
-	background-color: ACCENT-DISABLED_HOVER;
+	background-color: @surface1;
 }
 
 /* header */
 .weather-button .weather-header,
 .events-button .events-title,
 .world-clocks-button .world-clocks-header {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 
 /* Events section */
 .events-button .events-list {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 .events-button .event-time {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 .events-button .events-box .events-list .event-placeholder { /* if no events, 46+ */
-	color: TEXT-DISABLED-COLOR;
+	color: @subtext0;
 }
 
 /* World clocks section */
 .world-clocks-button .world-clocks-time {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 
 .world-clocks-button .world-clocks-city,
 .world-clocks-button .world-clocks-timezone {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 
 /* Weather section */
 .weather-button .weather-forecast-time {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }

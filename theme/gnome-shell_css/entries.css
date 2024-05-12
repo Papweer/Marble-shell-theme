@@ -6,38 +6,38 @@ StEntry,
 	padding: 8px;
 	transition-duration: 100ms;
 	border: 1px solid BORDER-SHADOW;
-	color: TEXT-SECONDARY-COLOR;
-	selection-background-color: ACCENT-COLOR;
-	selected-color: TEXT-PRIMARY-COLOR;
+	color: @subtext1;
+	selection-background-color: @accent-color;
+	selected-color: @text;
 }
 
 StEntry {
-	background-color: ACCENT-DISABLED-COLOR;
+	background-color: @surface0;
 }
 
 .search-entry {
-	background-color: SECTION-COLOR;
+	background-color: @mantle;
 
 }
 
 /* icon in entry */
 StEntry StLabel {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 
 /* change icon color if entry not selected */
 StEntry StLabel:insensitive {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 StEntry:hover,
 StEntry:focus,
 StEntry:active {
-	border: 1px solid TEXT-DISABLED-COLOR;
-	background-color: ACCENT-DISABLED-COLOR;
+	border: 1px solid @subtext0;
+	background-color: @surface0;
 	box-shadow: none !important;
 }
 
 StEntry:focus {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }

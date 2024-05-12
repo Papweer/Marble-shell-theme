@@ -11,7 +11,7 @@
 	box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0); /* fix default dash focused box-shadow*/
 	transition-duration: 100ms;
 	border-radius: 20px;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: transparent;
 }
 
@@ -24,14 +24,13 @@
 
 /* Show Apps icon */
 .show-apps .overview-icon {
-	color: SHOW-APPS-ICON-COLOR;
+	color: @accent-color;
 }
 
 /* folders */
 .app-well-app.app-folder .overview-icon,
 .app-folder /* 46+ */ {
-	background-color: ACCENT-DISABLED_HOVER;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface1;
 }
 
 
@@ -43,12 +42,11 @@
 .overview-tile:hover,
 .overview-tile:focus,
 .overview-tile:selected {
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
 }
 
 .overview-tile:focus {
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 2px @accent-color !important;
 }
 
 /* app icons effects in dash */
@@ -61,7 +59,7 @@
 #dash .dash-item-container .overview-tile:focus .overview-icon, /* 46+ */
 #dash .dash-item-container .overview-tile:selected .overview-icon, /* 46+ */
 #dash .dash-item-container .show-apps:checked .overview-icon {
-	box-shadow: inset 0 0 4px 1px WELL-APP-SELECTED;
+	box-shadow: inset 0 0 4px 1px @accent-color;
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -71,8 +69,7 @@
 .app-well-app.app-folder:drop .overview-icon,
 .app-folder.grid-search-result:drop .overview-icon,
 .overview-tile:drop { /* 46+ */
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR;
-	background-color: ACCENT-OPACITY-COLOR;
+	box-shadow: inset 0 0 0 2px @accent-color;
 }
 
 
@@ -81,16 +78,15 @@
 /* collapsed folder dialog */
 .app-folder-dialog {
 	border-radius: 32px;
-	background-color: BACKGROUND-COLOR;
+	background-color: @base;
 	border: none;
 	padding: 0; /* because of icon grid */
-	box-shadow: inset 0 0 0 1px BORDER-MENU-SHADOW;
 }
 
 /* folder title */
 .app-folder-dialog .folder-name-container .folder-name-label {
 	padding: 5px 7px;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	font-weight: 700;
 	transition-duration: 100ms;
 }
@@ -99,35 +95,34 @@
 .app-folder-dialog .folder-name-container .folder-name-entry {
 	font-weight: 700;
 	border: none;
-	box-shadow: inset 0 0 0 1px TEXT-DISABLED-COLOR !important;
-	background-color: ACCENT-DISABLED-COLOR;
-	selection-background-color: ACCENT-COLOR;
-	selected-color: TEXT-PRIMARY-COLOR;
+	box-shadow: inset 0 0 0 1px @subtext0 !important;
+	background-color: @surface0;
+	selection-background-color: @accent-color;
+	selected-color: @text;
 }
 
 /* edit folder name button */
 .app-folder-dialog .folder-name-container .edit-folder-button,
 .app-folder-dialog .icon-button { /* 46+ */
 	border-radius: 12px;
-	background-color: ACCENT-DISABLED-COLOR;
-	color: TEXT-PRIMARY-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
+	color: @text;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button:hover,
 .app-folder-dialog .icon-button:hover {
-	background-color: ACCENT-DISABLED_HOVER;
+	background-color: @surface1;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button:focus,
 .app-folder-dialog .icon-button:focus {
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 2px @accent-color !important;
 }
 
 
 .page-indicator .page-indicator-icon {
 	border-radius: 99px;
-	background-color: TEXT-SECONDARY-COLOR;
+	background-color: @subtext1;
 }
 
 
@@ -141,44 +136,39 @@
 
 .page-navigation-arrow > StIcon {
 	margin: 0;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 
 .page-navigation-arrow:hover {
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
 }
 
 .page-navigation-arrow:hover > StIcon {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: rgba(0, 0, 0, 0);
 }
 
 .page-navigation-arrow:active {
-	background-color: ACCENT-DISABLED_HOVER;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface1;
 }
 
 
 /* left and right hints on edges of the screen when dragging app icon */
 .page-navigation-hint.next:ltr,
 .page-navigation-hint.previous:rtl {
-	background-gradient-start: PAGE-NAV-HINT;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-gradient-start: @mantle;
 }
 
 .page-navigation-hint.previous:ltr,
 .page-navigation-hint.next:rtl {
-	background-gradient-end: PAGE-NAV-HINT;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-gradient-end: @mantle;
 }
 
 
 /* Dash */
 
 #dash .dash-background {
-	background-color: DASH-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-MENU-SHADOW;
+	background-color: @base;
 	border: none; /* remove black border on ubuntu */
 	padding: 4px 2px 4px 2px;
 	border-radius: 21px;
@@ -193,16 +183,14 @@
 
 /* when dash in overview */
 #dashtodockContainer.overview #dash .dash-background {
-	box-shadow: inset 0 0 0 1.5px BORDER-MENU-SHADOW;
-	background-color: DASH_OVERVIEW;
+	background-color: @base;
 }
 
 /* popup label when hovering the app in dash */
 .dash-label {
-	background-color: SECTION-OPAQUE-COLOR;
-	color: TEXT-PRIMARY-COLOR;
+	background-color: @mantle;
+	color: @text;
 	border-radius: 12px;
-	border: 1px solid BORDER-MENU-SHADOW;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -213,7 +201,7 @@
 	width: 10px;
 	height: 5px;
 	border-radius: 5px;
-	background: ACCENT-SECONDARY-COLOR;
+	background: @accent-color;
 }
 
 #dash .app-grid-running-dot {
@@ -245,7 +233,7 @@
 
 /* pinned apps | running apps */
 .dash-separator {
-	box-shadow: 0 0 0 0.25px TEXT-DISABLED-COLOR;
+	box-shadow: 0 0 0 0.25px @subtext0;
 }
 
 
@@ -268,7 +256,7 @@
 .show-apps:selected:hover .overview-icon,
 .show-apps:active .overview-icon,
 .show-apps:checked .overview-icon {
-	box-shadow: inset 0 0 4px 1px WELL-APP-SELECTED;
+	box-shadow: inset 0 0 4px 1px @accent-color;
 }
 
 /* ubuntu fix */
@@ -285,7 +273,7 @@
 #dashtodockContainer.right.extended.dashtodock #dash .dash-background,
 #dashtodockContainer.right.extended.shrink #dash .dash-background {
 	border-radius: 0;
-	background-color: DASH-COLOR;
+	background-color: @base;
 	box-shadow: none;
 	transition-duration: 250ms;
 }
@@ -303,5 +291,5 @@
 #dashtodockContainer.right.extended.overview #dash .dash-background,
 #dashtodockContainer.right.extended.overview.dashtodock #dash .dash-background,
 #dashtodockContainer.right.extended.overview.shrink #dash .dash-background {
-	background-color: BACKGROUND-COLOR;
+	background-color: @base;
 }

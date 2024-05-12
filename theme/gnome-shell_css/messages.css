@@ -12,7 +12,7 @@
 
 /* "No Notifications" text */
 .message-list-placeholder {
-	color: TEXT-DISABLED-COLOR;
+	color: @subtext0;
 	font-weight: 700;
 }
 
@@ -23,50 +23,47 @@
 
 /* popup messages */
 .message {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	border-radius: 18px;
 }
 
 
 /* Message OSD */
 .notification-banner {
-	background-color: BACKGROUND-COLOR;
-	color: TEXT-PRIMARY-COLOR;
-	border: 1px solid BORDER-MENU-SHADOW;
+	background-color: @base;
+	color: @text;
 	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07);
 }
 
 
 /* messages in menus */
 .message-list .message, .popup-menu-content .message {
-	background-color: SECTION-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @mantle;
 	transition-duration: 100ms;
 }
 .message-list .message:hover {
-	background-color: ACCENT-DISABLED-COLOR;
+	background-color: @surface0;
 }
 .message-list .message:focus {
-	background-color: ACCENT-OPACITY-COLOR;
-	box-shadow: inset 0 0 0 2px ACCENT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 2px @accent-color !important;
 }
 
 /* text / header in message */
 .message .message-body,
 .message-title {
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 
 /* message time stamp */
 .message .message-secondary-bin > .event-time {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 /* message title on 46+ */
 .message .message-header .message-source-icon,
 .message .message-header .message-header-content .message-source-title,
 .message .message-header .message-header-content .event-time {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 
@@ -76,20 +73,19 @@
 	border-radius: 99px;
 	padding: 5px;
 	margin: 0px;
-	color: TEXT-PRIMARY-COLOR;
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	color: @text;
+	background-color: @surface0;
 	transition-duration: 100ms;
 }
 
 .message-close-button:hover,
 .message-expand-button:hover {
-	background-color: ACCENT-DISABLED_HOVER;
+	background-color: @surface1;
 }
 
 .message-close-button:active,
 .message-expand-button:active {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 
@@ -99,17 +95,16 @@
 	/* currently disabled because of 46 */
 	/* padding: 0 14px; */
 	/* margin: 20px 2px; */
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	transition-duration: 100ms;
 }
 
 .message-media-control:hover {
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
-	color: TEXT-PRIMARY-COLOR;
+	background-color: @surface0;
+	color: @text;
 }
 
-.message-media-control:insensitive { color: TEXT-DISABLED-COLOR; }
+.message-media-control:insensitive { color: @subtext0; }
 
 /* fix margin for last button */
 /* currently disabled because of 46 */
@@ -130,8 +125,8 @@
 /* when there is no artwork */
 .media-message-cover-icon.fallback,
 .media-message .message-icon.message-themed-icon { /* 46+ */
-	color: TEXT-PRIMARY-COLOR;
-	background-color: ACCENT-DISABLED_HOVER;
+	color: @text;
+	background-color: @surface1;
 	border: 1px solid BORDER-SHADOW;
 	border-radius: 15px;
 	icon-size: 1.6em !important;
@@ -143,4 +138,4 @@
 
 
 /* URLs in messages */
-.url-highlighter { link-color: ACCENT-SECONDARY-COLOR; }
+.url-highlighter { link-color: @accent-color; }

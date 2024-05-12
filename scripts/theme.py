@@ -21,8 +21,7 @@ class Theme:
         :param is_filled: if True, theme will be filled
         """
 
-        self.colors = colors_json["colors"]
-        self.elements = colors_json["elements"]
+        self.colors = colors_json
         self.temp_folder = f"{temp_folder}/{theme_type}"
         self.theme_folder = theme_folder
         self.theme_type = theme_type
@@ -34,6 +33,8 @@ class Theme:
         generate_file(f"{self.theme_folder}_css/", self.main_styles)
 
         # if theme is filled
+        
+        """
         if is_filled:
             for apply_file in os.listdir(f"{self.temp_folder}/"):
                 replace_keywords(f"{self.temp_folder}/{apply_file}",
@@ -42,6 +43,7 @@ class Theme:
                                  ("BUTTON_INSENSITIVE", "ACCENT-FILLED_INSENSITIVE"),
                                  ("BUTTON-TEXT-COLOR", "TEXT-BLACK-COLOR"),
                                  ("BUTTON-TEXT_SECONDARY", "TEXT-BLACK_SECONDARY"))
+        """
 
     def __add__(self, other):
         """
@@ -71,8 +73,17 @@ class Theme:
     def __del__(self):
         # delete temp folder
         os.system(f"rm -r {self.temp_folder}")
+        
+    def adjust_lightness(self, hexColor, factor=1.1):
+        r, g, b = float(int(hexColor[1:3], 16)), float(int(hexColor[3:5], 16)), float(int(hexColor[5:], 16))
+        print(r, g, b)
+        h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+        l = max(min(l * factor, 1.0), 0.0)
+        r, g, b = colorsys.hls_to_rgb(h, l, s)
+        r, g, b = int(r * 255), int(g * 255), int(b * 255)
+        return "#%02x%02x%02x" % (r,g,b)
 
-    def __apply_colors(self, hue, destination, apply_file, sat=None):
+    def __apply_colors(self, destination, apply_file, flavor, accent):
         """
         Install accent colors from colors.json to different file
         :param hue
@@ -80,33 +91,20 @@ class Theme:
         :param apply_file: file name
         :param sat: color saturation (optional)
         """
-
+        colors = self.colors["@" + flavor]
         # list of (keyword, replaced value)
         replaced_colors = list()
-
-        # colorsys works in range(0, 1)
-        for element in self.elements:
-            # if color has default color and hasn't been replaced
-            if "\"s\"" not in self.elements[element] and self.elements[element]["default"]:
-                default_element = self.elements[element]["default"]
-                default_color = self.elements[default_element]
-                self.elements[element] = default_color
-
-            # convert sla to range(0, 1)
-            lightness = int(self.elements[element]["l"]) / 100
-            saturation = int(self.elements[element]["s"]) / 100 if sat is None else \
-                int(self.elements[element]["s"]) * (sat / 100) / 100
-            alpha = self.elements[element]["a"]
-
-            # convert hsl to rgb and multiply every item
-            red, green, blue = [int(item * 255) for item in colorsys.hls_to_rgb(h, lightness, saturation)]
-
-            replaced_colors.append((element, f"rgba({red}, {green}, {blue}, {alpha})"))
+        
+        replaced_colors.append(("@accent-color", colors["@" + accent]))
+        replaced_colors.append(("@accent-color-hover", self.adjust_lightness(colors["@"+ accent])))
+        
+        for keyword in colors:
+            replaced_colors.append((keyword, colors[keyword]))
 
         # replace colors
         replace_keywords(os.path.expanduser(f"{destination}/{apply_file}"), *replaced_colors)
 
-    def __apply_theme(self, hue, source, destination, sat=None):
+    def __apply_theme(self, source, destination, flavor, accent):
         """
         Apply theme to all files in directory
         :param hue
@@ -116,9 +114,9 @@ class Theme:
         """
 
         for apply_file in os.listdir(f"{source}/"):
-            self.__apply_colors(hue, destination, apply_file, sat=sat)
+            self.__apply_colors(destination, apply_file, flavor, accent)
 
-    def install(self, hue, name, sat=None, destination=None):
+    def install(self, flavor, accent, destination=None):
         """
         Copy files and generate theme with different accent color
         :param hue
@@ -126,7 +124,7 @@ class Theme:
         :param sat: color saturation (optional)
         :param destination: folder where theme will be installed
         """
-
+        name = flavor + "-" + accent
         is_dest = bool(destination)
 
         print(f"Creating {name} theme...", end=" ")
@@ -136,7 +134,7 @@ class Theme:
                 destination = destination_return(self.destination_folder, name, self.theme_type)
 
             copy_files(self.temp_folder + '/', destination)
-            self.__apply_theme(hue, self.temp_folder, destination, sat=sat)
+            self.__apply_theme(self.temp_folder, destination, flavor, accent)
 
         except Exception as err:
             print("\nError: " + str(err))

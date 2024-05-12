@@ -4,9 +4,8 @@
 .resize-popup, /* i dunno what is that :( */
 .workspace-switcher, /* ctrl + alt + arr_left/arr_right  */
 .osd-window /* volume/brightness/.. switcher */ {
-	color: TEXT-PRIMARY-COLOR;
-	background-color: BACKGROUND-COLOR;
-	border: 1px solid BORDER-MENU-SHADOW;
+	color: @text;
+	background-color: @base;
 	border-radius: 20px;
 	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07);
 }
@@ -17,7 +16,7 @@
 /* running apps in switcher list */
 .switcher-list .item-box {
 	border-radius: 20px;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 	background-color: transparent;
 }
 
@@ -25,32 +24,31 @@
 .switcher-list .item-box:focus,
 .switcher-list .item-box:selected,
 .switcher-list .item-box:outlined {
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
+	background-color: @surface0;
 }
 
 
 /* arrow if app has multiple windows */
 .switcher-arrow {
-  color: TEXT-DISABLED-COLOR;
+  color: @subtext0;
   border-color: transparent;
 }
 
 .switcher-arrow:highlighted {
-	color: TEXT-SECONDARY-COLOR;
+	color: @subtext1;
 }
 
 
 /* ctrl + alt + arr_left/arr_right */
 .ws-switcher-indicator {
-	background-color: TEXT-SECONDARY-COLOR;
+	background-color: @subtext1;
 	border-radius: 99px;
 	padding: 2.5px;
 	margin: 7.5px 5px;
 }
 
 .ws-switcher-indicator:active {
-	background-color: TEXT-PRIMARY-COLOR;
+	background-color: @text;
 	padding: 5px 20px;
 	margin: 5px;
 }
@@ -59,19 +57,17 @@
 /* Modal dialog */
 .modal-dialog {
 	border-radius: 20px;
-	background-color: BACKGROUND-COLOR;
+	background-color: @base;
 	border: none;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
-	color: TEXT-PRIMARY-COLOR;
+	color: @text;
 }
 
 
 /* user avatar */
 .user-icon {
 	border-radius: 999px;
-	color: TEXT-PRIMARY-COLOR;
-	background-color: ACCENT-DISABLED-COLOR;
-	box-shadow: inset 0 0 0 1px BORDER-MENU-SHADOW;
+	color: @text;
+	background-color: @surface0;
 }
 
 .user-icon.user-avatar {
@@ -81,7 +77,7 @@
 
 /* password entry */
 .prompt-dialog-password-entry {
-	background-color: SECTION-COLOR;
+	background-color: @mantle;
 }
 
 
@@ -91,9 +87,8 @@
 .hotplug-notification-item {
 	padding: 10px 0 !important;
 	border-radius: 12px !important;
-	box-shadow: inset 0 0 0 1px BORDER-SHADOW;
-	background-color: ACCENT-DISABLED-COLOR;
-	color: TEXT-PRIMARY-COLOR;
+	background-color: @surface0;
+	color: @text;
 	animation-duration: 100ms;
 }
 
@@ -137,25 +132,25 @@
 .modal-dialog-linked-button:focus,
 .notification-button:hover,
 .notification-button:focus {
-	background: ACCENT-DISABLED_HOVER;
-	color: TEXT-PRIMARY-COLOR;
+	background: @surface1;
+	color: @text;
 }
 
 .modal-dialog-linked-button:last-child {
-	background-color: BUTTON-COLOR;
-	color: BUTTON-TEXT-COLOR;
+	background-color: @accent-color;
+	color: @text;
 }
 
 .modal-dialog-linked-button:last-child:hover,
 .modal-dialog-linked-button:last-child:focus {
-	background-color: BUTTON_HOVER;
+	background-color: @accent-color-hover;
 }
 
 .modal-dialog-linked-button:focus,
 .hotplug-notification-item:focus,
 .notification-button:focus {
 	animation-duration: 100ms;
-	box-shadow: inset 0 0 0 1px TEXT-DISABLED-COLOR !important;
+	box-shadow: inset 0 0 0 1px @subtext0 !important;
 }
 
 .modal-dialog-linked-button:focus:hover,
@@ -164,12 +159,12 @@
 .modal-dialog-linked-button:focus:active,
 .hotplug-notification-item:focus:active,
 .notification-button:focus:active {
-	box-shadow: inset 0 0 0 1px TEXT-SECONDARY-COLOR !important;
+	box-shadow: inset 0 0 0 1px @subtext1 !important;
 }
 
 .modal-dialog .modal-dialog-linked-button:insensitive,
 .hotplug-notification-item:insensitive,
 .notification-banner .notification-button:insensitive {
-	color: BUTTON-TEXT_SECONDARY;
-	background-color: BUTTON_INSENSITIVE;
+	color: @subtext1;
+	background-color: @surface1;
 }

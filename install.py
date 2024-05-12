@@ -41,7 +41,7 @@ def parse_args():
                                      formatter_class=argparse.RawDescriptionHelpFormatter,
                                      epilog=textwrap.dedent('''
                     Examples:
-                      -a                            all accent colors, light & dark mode
+                      -a                            all accent colors, all flavors
                       --all                         all accent colors, dark mode
                       --purple                      purple accent color, light mode
                       --hue 150 --name coldgreen    custom coldgreen accent color, light & dark mode
@@ -51,27 +51,28 @@ def parse_args():
     # Default arguments
     parser.add_argument('-r', '--remove', action='store_true', help='remove all "Marble" themes')
 
-    default_args = parser.add_argument_group('Install default theme')
-    default_args.add_argument('-a', '--all', action='store_true', help='all available accent colors')
-    default_args.add_argument('--red', action='store_true', help='red theme only')
-    default_args.add_argument('--pink', action='store_true', help='pink theme only')
-    default_args.add_argument('--purple', action='store_true', help='purple theme only')
-    default_args.add_argument('--blue', action='store_true', help='blue theme only')
-    default_args.add_argument('--green', action='store_true', help='green theme only')
-    default_args.add_argument('--yellow', action='store_true', help='yellow theme only')
-    default_args.add_argument('--gray', action='store_true', help='gray theme only')
+    accentColors = parser.add_argument_group('Accent Colors')
+    accentColors.add_argument('-a', '--all', action='store_true', help='all available accent colors')
+    accentColors.add_argument('--rosewater', action='store_true', help='Rosewater Accent Color')
+    accentColors.add_argument('--flamingo', action='store_true', help='Flamingo Accent Color')
+    accentColors.add_argument('--pink', action='store_true', help='Pink Accent Color')
+    accentColors.add_argument('--mauve', action='store_true', help='Mauve Accent Color')
+    accentColors.add_argument('--red', action='store_true', help='Red Accent Color')
+    accentColors.add_argument('--maroon', action='store_true', help='Maroon Accent Color')
+    accentColors.add_argument('--peach', action='store_true', help='Peach Accent Color')
+    accentColors.add_argument('--yellow', action='store_true', help='Yellow Accent Color')
+    accentColors.add_argument('--green', action='store_true', help='Green Accent Color')
+    accentColors.add_argument('--teal', action='store_true', help='Teal Accent Color')
+    accentColors.add_argument('--sky', action='store_true', help='Sky Accent Color')
+    accentColors.add_argument('--sapphire', action='store_true', help='Sapphire Accent Color')
+    accentColors.add_argument('--blue', action='store_true', help='Blue Accent Color')
+    accentColors.add_argument('--lavender', action='store_true', help='Lavender Accent Color')
 
-    custom_args = parser.add_argument_group('Install custom color theme')
-    custom_args.add_argument('--hue', type=int, choices=range(0, 361), help='generate theme from Hue prompt',
-                             metavar='(0 - 360)')
-    custom_args.add_argument('--name', nargs='?', help='theme name (optional)')
-
-    color_styles = parser.add_argument_group("Theme color tweaks")
-    color_styles.add_argument("--filled", action="store_true", help="make accent color more vibrant")
-
-    color_tweaks = parser.add_argument_group('Optional theme tweaks')
-    color_tweaks.add_argument('--sat', type=int, choices=range(0, 251),
-                              help='custom color saturation (<100%% - reduce, >100%% - increase)', metavar='(0 - 250)%')
+    flavors = parser.add_argument_group('Flavors')
+    flavors.add_argument('--latte', action='store_true', help='latte flavor')
+    flavors.add_argument('--frappe', action='store_true', help='frappe flavor')
+    flavors.add_argument('--macchiato', action='store_true', help='macchiato flavor')
+    flavors.add_argument('--mocha', action='store_true', help='mocha flavor')
 
     gdm_theming = parser.add_argument_group('GDM theming')
     gdm_theming.add_argument('--gdm', action='store_true', help='install GDM theme. \
@@ -80,7 +81,6 @@ def parse_args():
     panel_args = parser.add_argument_group('Panel tweaks')
     panel_args.add_argument('-Pds', '--panel_default_size', action='store_true', help='set default panel size')
     panel_args.add_argument('-Pnp', '--panel_no_pill', action='store_true', help='remove panel button background')
-    panel_args.add_argument('-Ptc', '--panel_text_color', type=str, nargs='?', help='custom panel HEX(A) text color')
 
     overview_args = parser.add_argument_group('Overview tweaks')
     overview_args.add_argument('--launchpad', action='store_true', help='change Show Apps icon to MacOS Launchpad icon')
@@ -103,13 +103,6 @@ def apply_tweaks(args, theme):
         with open(f"{config.tweaks_folder}/panel/no-pill.css", "r") as f:
             theme += f.read()
 
-    if args.panel_text_color:
-        theme += ".panel-button,\
-                    .clock,\
-                    .clock-display StIcon {\
-                        color: rgba(" + ', '.join(map(str, hex_to_rgba(args.panel_text_color))) + ");\
-                    }"
-
     if args.launchpad:
         with open(f"{config.tweaks_folder}/launchpad/launchpad.css", "r") as f:
             theme += f.read()
@@ -117,7 +110,7 @@ def apply_tweaks(args, theme):
         theme *= f"{config.tweaks_folder}/launchpad/launchpad.png"
 
 
-def install_theme(theme, hue, theme_name, sat, gdm=False):
+def install_theme(theme, flavor, accent, gdm=False):
     """
     Check if GDM and install theme
     :param theme: object to install
@@ -127,11 +120,7 @@ def install_theme(theme, hue, theme_name, sat, gdm=False):
     :param gdm: if GDM theme
     """
 
-    if gdm:
-        theme.install(hue, sat)
-    else:
-        theme.install(hue, theme_name, sat)
-
+    theme.install(flavor, accent)
 
 def apply_colors(args, theme, colors, gdm=False):
     """
@@ -141,32 +130,20 @@ def apply_colors(args, theme, colors, gdm=False):
     :param colors: colors from colors.json
     :param gdm: if GDM theme
     """
+    accents = ["rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender"]
+    flavors = ["latte", "frappe", "macchiato", "mocha"]
+    argsSpecified = False  # check if any color arguments specified
+    for flavor in flavors:
+        if args.all or getattr(args, flavor):
+            for accent in accents:
+                if args.all or getattr(args, accent):
+                    argsSpecified = True
+                    install_theme(theme, flavor, accent,  gdm)
+                    if gdm:
+                        return
 
-    is_colors = False  # check if any color arguments specified
-
-    # if custom color
-    if args.hue:
-        hue = args.hue
-        theme_name = args.name if args.name else f'hue{hue}'
-
-        install_theme(theme, hue, theme_name, args.sat, gdm)
-        return
-
-    else:
-        for color in colors["colors"]:
-            if args.all or getattr(args, color):
-                is_colors = True
-
-                hue = colors["colors"][color]["h"]
-                # if saturation already defined in color (gray)
-                sat = colors["colors"][color]["s"] if colors["colors"][color]["s"] is not None else args.sat
-
-                install_theme(theme, hue, color, sat, gdm)
-                if gdm:
-                    return
-
-    if not is_colors:
-        print('No color arguments specified. Use -h or --help to see the available options.')
+    if not argsSpecified:
+        print('No accent/flavor arguments specified. Use -h or --help to see the available options.')
 
 
 def global_theme(args, colors):
@@ -208,7 +185,7 @@ def local_theme(args, colors):
         remove_files()
 
     gnome_shell_theme = Theme("gnome-shell", colors, f"{config.raw_theme_folder}/{config.gnome_folder}",
-                              config.themes_folder, config.temp_folder, is_filled=args.filled)
+                              config.themes_folder, config.temp_folder)
 
     apply_tweaks(args, gnome_shell_theme)
     apply_colors(args, gnome_shell_theme, colors)

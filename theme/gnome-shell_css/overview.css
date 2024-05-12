@@ -2,7 +2,7 @@
 
 #overviewGroup, /* overview background */
 .workspace-animation { /* spacing between worspaces (ctrl+alt+arr_left/right / 3 fingers gesture) */
-	background-color: BACKGROUND-OPAQUE-COLOR;
+	background-color: @crust;
 }
 
 /* workspaces */
@@ -18,8 +18,8 @@
 .window-caption {
 	spacing: 20px;
 	border-radius: 12px;
-	color: TEXT-PRIMARY-COLOR;
-	background-color: SECTION-OPAQUE-COLOR;
+	color: @text;
+	background-color: @mantle;
 	border: 1px solid BORDER-SHADOW;
 	padding: 4px 8px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
@@ -28,15 +28,14 @@
 
 /* Activities Ripple (Settings - Multitasking - Hot Corner) */
 .ripple-box {
-	background-color: ACCENT-OPACITY-COLOR;
-	box-shadow: 0 0 2px 2px ACCENT-OPACITY-COLOR;
+	box-shadow: 0 0 2px 2px @accent-color;
 	border-radius: 0  0 99px 0;
 }
 
 
 /* thumbnails on overview (workspaces list under search) */
 .workspace-thumbnail {
-	background-color: ACCENT-DISABLED-COLOR !important;
+	background-color: @surface0 !important;
 	border-radius: 4px;
 	border: 1px solid BORDER-SHADOW !important;
 }
@@ -50,17 +49,15 @@
 
 /* selected indicator */
 .workspace-thumbnail-indicator {
-	background-color: ACCENT-OPACITY-COLOR;
-	border-color: TEXT-DISABLED-COLOR;
-	border-width: 1px;
+	border-color: @subtext0;
+	border-width: 2px;
 	border-radius: 3px;
 }
 
 
 /* Tiled window previews */
 .tile-preview {
-	background-color: ACCENT-OPACITY-COLOR;
-	border: 1px solid BUTTON-COLOR;
+	border: 2px solid @accent-color;
 }
 
 /* .windows-close in screenshot.css */
